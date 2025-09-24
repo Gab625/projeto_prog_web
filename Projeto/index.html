@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Horas Extras</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="calc-container">
+            <h2>Calculadora de Horas Extras</h2>
+            <form id="calc-form">
+                <div class="form-inputs">
+                    <div class="form-control">
+                        <label for="salario">Salário:</label>
+                        <input 
+                            type="number" 
+                            name="salario" 
+                            id="salario" 
+                            placeholder="Exemplo: 1518.00"
+                            min="0"
+                            step="0.01"
+                            required
+                          />
+                    </div>
+                    <div class="form-control">
+                        <label for="horasT">Horas Trabalhadas:</label>
+                        <input 
+                            type="number" 
+                            name="horasT" 
+                            id="horasT" 
+                            placeholder="Exemplo: 220"
+                            min="1"
+                            required
+                          />
+                    </div>
+                    <div class="form-control">
+                        <label for="horasE">Horas Extras:</label>
+                        <input 
+                            type="number" 
+                            name="horasE" 
+                            id="horasE" 
+                            placeholder="Horas"
+                            min="0"
+                            required
+                          />
+                    </div>
+                    <div class="form-control">
+                        <label for="minutosE">Minutos Extras:</label>
+                        <input 
+                            type="number" 
+                            name="minutosE" 
+                            id="minutosE" 
+                            placeholder="Minutos"
+                            min="0"
+                            max="59"
+                            required
+                          />
+                    </div>
+                    <div class="form-control">
+                        <label for="horasEDF">Horas Extras Domingo e Feriado: </label>
+                        <input 
+                            type="number" 
+                            name="horasEDF" 
+                            id="horasEDF" 
+                            placeholder="Horas"
+                            min="0"
+                            required
+                          />
+                    </div>
+                    <div class="form-control">
+                        <label for="minutosEDF">Minutos Extras Domingo e Feriado:</label>
+                        <input 
+                            type="number" 
+                            name="minutosEDF" 
+                            id="minutosEDF" 
+                            placeholder="Minutos"
+                            min="0"
+                            max="59"
+                            required
+                          />
+                    </div>
+                </div>
+                <div class="action-control">
+                    <button type="submit" id="calc-btn">Calcular</button>
+                    <button type="button" id="clear-btn">Limpar</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="result-container" class="hide">
+            <h3>Dados Iniciais: </h3>
+            <p id="sal-info">Salário Bruto: <span id="sal-value"></span></p>
+            <p id="horas-info">Horas trabalhadas por mês: <span id="horasT-value"></span></p>
+            <p id="extra-info">Horas Extras Totais: <span id="extra-value"></span></p>
+            <p id="extra-normal-info">Horas Extras Normais: <span id="extra-normal-value"></span></p>
+            <p id="extra-edf-info">Horas Extras Domingo/Feriado: <span id="extra-edf-value"></span></p>
+            <p id="total-extra-info">Total de Horas Extras (decimal): <span id="total-extra-decimal"></span></p>
+            
+            <h4>Resultado dos Calculos: </h4>
+            <p id="horas-result">Valor da hora normal: <span id="normal-hour-value">R$ 0,00</span></p>
+            <p id="extra-result">Valor da hora extra normal (50%): <span id="extra-hour-value">R$ 0,00</span></p>
+            <p id="extra-edf-result">Valor da hora extra domingo/feriado (100%): <span id="extra-edf-hour-value">R$ 0,00</span></p>
+            <p id="normal-extra-total">Total por horas extras normais: <span id="normal-extra-total-value">R$ 0,00</span></p>
+            <p id="edf-extra-total">Total por horas extras domingo/feriado: <span id="edf-extra-total-value">R$ 0,00</span></p>
+            <p id="total-result">Total a receber por todas as horas extras: <span id="total-value">R$ 0,00</span></p>
+            <button id="back-btn">Voltar</button>
+        </div>
+    </div>
+</body>
+</html>

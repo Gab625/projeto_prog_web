@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #090e22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #FFF;
+}
+
+.hide{
+    display: none !important;
+}
+
+.container {
+    min-width: 400px;
+    min-height: 400px;
+    background-color: #1d1e33;
+    padding: 2rem;
+}
+
+#calc-container h2,
+#result-container h3,
+#result-container h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: #ccc;
+}
+
+.form-control input[type="number"] {
+    padding: 0.8rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2a2b3d;
+    color: #fff;
+    font-size: 1rem;
+}
+.form-control input[type="number"]:focus {
+    outline: none;
+    border-color: #f44236;
+    box-shadow: 0 0 5px rgba(244, 66, 54, 0.5);
+}
+.checkbox-control {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    color: #ccc;
+
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: #f44236;
+}
+
+.action-control {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+button {
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    background-color: #f44236;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.9;
+    flex: 1;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+#clear-btn {
+    background-color: #444;
+}
+
+#clear-btn:hover {
+    background-color: #555;
+}
+
+#result-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#result-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+}
+
+#result-container h4 {
+    font-size: 1.4rem;
+    margin-top: 4rem;
+}
+
+#back-btn {
+    margin-top: 2rem;
+    align-self: center;
+    max-width: 200px;
+}
