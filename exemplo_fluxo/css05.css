@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+input, button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    background: navy;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+button:hover {
+    background: dodgerblue;
+}
+#resultado {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}

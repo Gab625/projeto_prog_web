@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Outra Tela - Resultado da Soma</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: #f4f4f4;
+        }
+        h1 { color: green; }
+        #resultadoSoma { 
+            font-size: 24px; 
+            margin: 20px 0; 
+            padding: 10px; 
+            background-color: white; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button { 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Outra Tela: Visualizando a Soma</h1>
+    <p>Abrir esta página após calcular na tela principal para ver o resultado salvo.</p>
+    <div id="resultadoSoma">Carregando...</div>
+    <button onclick="limparStorage()">Limpar Resultado Salvo</button>
+    <button onclick="window.open('index.html', '_blank')">Abrir Tela Principal</button>
+
+    <script>
+        // Função para carregar e exibir o resultado do localStorage
+        function carregarResultado() {
+            const soma = localStorage.getItem('ultimaSoma');
+            const valor1 = localStorage.getItem('valor1');
+            const valor2 = localStorage.getItem('valor2');
+            
+            const elemento = document.getElementById('resultadoSoma');
+            
+            if (soma && valor1 && valor2) {
+                // Converte de volta para números se necessário (mas como é string, parseFloat é seguro)
+                const num1 = parseFloat(valor1);
+                const num2 = parseFloat(valor2);
+                const total = parseFloat(soma);
+                
+                elemento.innerHTML = `
+                    <strong>Resultado da Soma:</strong><br>
+                    ${num1} + ${num2} = <span style="color: green; font-size: 28px;">${total}</span>
+                `;
+                elemento.style.color = "black";
+            } else {
+                elemento.textContent = "Nenhum resultado encontrado. Calcule na tela principal primeiro!";
+                elemento.style.color = "red";
+            }
+        }
+        
+        // Chama a função ao carregar a página
+        window.addEventListener('load', carregarResultado);
+        
+        // Função para limpar o storage (opcional, para resetar)
+        function limparStorage() {
+            localStorage.removeItem('ultimaSoma');
+            localStorage.removeItem('valor1');
+            localStorage.removeItem('valor2');
+            carregarResultado();  // Atualiza a exibição
+            alert("Resultado limpo!");
+        }
+    </script>
+</body>
+</html>
