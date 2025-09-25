@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgueria Delícia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .burger-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .burger-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .burger-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #ff6b35;
+        }
+        
+        .burger-content {
+            padding: 20px;
+        }
+        
+        .burger-title {
+            font-size: 1.4rem;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .burger-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .burger-price {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .add-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .add-button:hover {
+            background: linear-gradient(135deg, #e55a2b, #e08415);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍔 Hamburgueria Delícia</h1>
+            <p class="subtitle">Os melhores hambúrgueres da cidade!</p>
+        </header>
+        
+        <div class="menu-grid">
+            <!-- Hambúrguer 1 -->
+            <div class="burger-card">
+                <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Classic%20cheeseburger%20with%20lettuce%20tomato%20and%20special%20sauce%20on%20toasted%20bun&id=1" 
+                     alt="Clássico cheeseburger com queijo derretido, alface fresca, tomate e molho especial em pão tostado" 
+                     class="burger-image">
+                <div class="burger-content">
+                    <h3 class="burger-title">Clássico CheeseBurger</h3>
+                    <p class="burger-description">Carne 100% bovina, queijo cheddar, alface, tomate, cebola e nosso molho especial. Um clássico que nunca sai de moda!</p>
+                    <p class="burger-price">R$ 24,90</p>
+                    <button class="add-button">Adicionar ao Pedido</button>
+                </div>
+            </div>
+            
+            <!-- Hambúrguer 2 -->
+            <div class="burger-card">
+                <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Bacon%20BBQ%20burger%20with%20crispy%20onion%20rings%20and%20smoky%20sauce&id=2" 
+                     alt="Hambúrguer barbecue com bacon crocante, anéis de cebola empanados e molho defumado" 
+                     class="burger-image">
+                <div class="burger-content">
+                    <h3 class="burger-title">BBQ Bacon Explosion</h3>
+                    <p class="burger-description">Carne suculenta, bacon crocante, queijo, anéis de cebola empanados e molho barbecue defumado. Uma explosão de sabores!</p>
+                    <p class="burger-price">R$ 29,90</p>
+                    <button class="add-button">Adicionar ao Pedido</button>
+                </div>
+            </div>
+            
+            <!-- Hambúrguer 3 -->
+            <div class="burger-card">
+                <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Vegetarian%20burger%20with%20avocado%20spinach%20and%20colorful%20vegetables&id=3" 
+                     alt="Hambúrguer vegetariano com abacate, espinafre, tomate e vegetais coloridos em pão integral" 
+                     class="burger-image">
+                <div class="burger-content">
+                    <h3 class="burger-title">Veggie Supreme</h3>
+                    <p class="burger-description">Hambúrguer de grão-de-bico, abacate, espinafre, tomate e maionese de ervas. Perfeito para quem busca uma opção saudável!</p>
+                    <p class="burger-price">R$ 22,90</p>
+                    <button class="add-button">Adicionar ao Pedido</button>
+                </div>
+            </div>
+            
+            <!-- Hambúrguer 4 -->
+            <div class="burger-card">
+                <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Spicy%20chicken%20burger%20with%20jalapenos%20and%20pepper%20jack%20cheese&id=4" 
+                     alt="Hambúrguer de frango picante com jalapeños, queijo pepper jack e molho chipotle" 
+                     class="burger-image">
+                <div class="burger-content">
+                    <h3 class="burger-title">Frango Picante</h3>
+                    <p class="burger-description">Filé de frango empanado, queijo pepper jack, jalapeños, alface e molho chipotle. Para quem gosta de uma aventura picante!</p>
+                    <p class="burger-price">R$ 26,90</p>
+                    <button class="add-button">Adicionar ao Pedido</button>
+                </div>
+            </div>
+            
+            <!-- Hambúrguer 5 -->
+            <div class="burger-card">
+                <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Double%20beef%20burger%20with%20melted%20cheese%20and%20caramelized%20onions&id=5" 
+                     alt="Hambúrguer duplo com duas carnes, queijo derretido, cebola caramelizada e molho especial" 
+                     class="burger-image">
+                <div class="burger-content">
+                    <h3 class="burger-title">Duplo Delícia</h3>
+                    <p class="burger-description">Duas carnes suculentas, queijo derretido, cebola caramelizada, bacon e nosso molho da casa. Para os verdadeiros amantes de hambúrguer!</p>
+                    <p class="burger-price">R$ 34,90</p>
+                    <button class="add-button">Adicionar ao Pedido</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 Hamburgueria Delícia - Todos os direitos reservados</p>
+            <p>Telefone: (11) 9999-9999 | Delivery disponível</p>
+        </footer>
+    </div>
+</body>
+</html>
