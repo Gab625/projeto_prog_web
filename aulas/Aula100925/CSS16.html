@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout com Sidebar (Flexbox)</title>
+    <style>
+        *{box-sizing: border-box;} /* o uso do asterisco (*) significa seletor universal - é aplicada para toda a página*/
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*Cabeçalho fixo no topo do layout*/
+        header{
+            background: #0b3d91;
+            color: #fff;
+            padding: 16px 24px;
+            font-size: 20px;
+        }
+
+        /*Container principal: sidebar+conteúdo lado a lado*/
+        .shell{
+            display: flex;                  /*ativa Flexbox*/
+            min-height: calc(100vh-64px);   /*altura total menos o header (~64px)*/
+        }
+
+        /*Sidebar (coluna esquerda)*/
+        .sidebar {
+            flex: 0 0 260px;        /*largura fixa de 260px, não cresce nem encolhe*/
+            background: #f4f6f8;
+            border-right: 1px solid #e0e0e0;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;    /*itens da sidebar*/
+            gap: 8px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #0b3d91;
+            padding: 10px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar a:hover{ background: #e8eefc; }
+
+        /*Conteúdo principal (coluna direita)*/
+
+        .content{
+            flex: 1 1 auto;     /*ocupa todo o espaço restante*/
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+        }
+
+        .card{
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+        }
+
+        footer{
+            margin-top: auto;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Responsividade: em telas estreitas, sidebar vai para cima e conteúdo abaixo*/
+        @media(max-width: 800px){
+            .shell {flex-direction: column;}
+            .sidebar{
+                flex: 0 0 auto;     /* deixa de ser fixa*/
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header> Meu Site - Sidebar + Conteúdo (Flexbox)</header>
+
+    <div class="shell">
+        <nav class="sidebar">
+            <strong>Navegação</strong>
+            <a href="#">Início</a>
+            <a href="#">Artigos</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+        </nav>
+        
+        <main class="content">
+            <section class="card">
+                <h2>Título da Página</h2>
+                <p>Este é o conteúdo principal. Aqui você coloca textos, imagens, tabelas, formulários, etc.</p>
+            </section>
+
+            <section class="card">
+                <h3>Seção 2</h3>
+                <p>Mais conteúdo, demonstrando como os cartões se comportam dentro do fluxo.</p>
+            </section>
+
+            <footer>
+                &copy 2025 - Rodapé da área de conteúdo
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

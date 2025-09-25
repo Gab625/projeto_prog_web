@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Flexbox</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;   /*centraliza na horizontal*/
+            align-items: center;        /*centraliza na vertical*/
+            height: 100vh;              /*ocupa 100% da altura da tela*/
+            border: 2px solid black     /*só para estilizar melhor*/
+        }
+
+        .item{
+            padding: 20px;
+            background: lightblue;
+            border: 1px solid navy;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Centralizado</div>
+    </div>
+</body>
+</html>

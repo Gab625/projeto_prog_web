@@ -1,0 +1,25 @@
+/*Seletores por TAG*/
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+p {
+    font-size: 22px;
+    color: rgb(232, 96, 245);
+}
+
+/*Seletor por CLASSE*/
+.destaque {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*Seletor po ID*/
+#unico {
+    color: green;
+    font-style: italic;
+    font-size: 20px;
+}

@@ -1,0 +1,14 @@
+body {
+    background-color: #f0f0f0; /*cor de fundo*/
+}
+
+h1 {
+    color: darkblue; /*cor do título*/
+    text-align: center; /* alinhamento no centro */
+}
+
+p { 
+    color: green; /*cor do texto*/
+    font-size: 18px; /* tamanho da fonte */
+    text-align: right;
+}

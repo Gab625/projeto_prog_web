@@ -1,0 +1,11 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    margin: 40px;
+    transition: transform 0.5s; /*suaviza a transformação*/
+}
+
+.box:hover{
+    transform: rotate(45deg) scale(1.3);    /*gira e aumenta*/
+}

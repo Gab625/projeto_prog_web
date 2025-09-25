@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flexbox</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;     /* organiza em coluna*/
+            min-height: 100vh;          /*ocupa toda a altura da tela*/
+        }
+
+        header{
+            background: navy;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: lightgray;
+        }
+
+        footer{
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meu Site</h1>
+        </header>
+
+        <main>
+            <p>Conteúdo principal aqui</p>
+        </main>
+
+        <footer>
+            <p>Rodapé &copy; 2025</p> <!--símbolo do copyright em html: &copy;-->
+        </footer>
+    </div>
+</body>
+</html>

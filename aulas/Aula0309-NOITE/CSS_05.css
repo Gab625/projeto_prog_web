@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: navy;
+    font-size: 36px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.destaque {
+    color: darkred;
+    font-weight: bold;
+    font-style: italic;
+}

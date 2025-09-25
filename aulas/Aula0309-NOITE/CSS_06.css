@@ -1,0 +1,7 @@
+.caixa {
+    width: 400px;                           /*largura*/
+    padding: 20px;                          /*espaço interno*/
+    border: 7cap outset blue;               /*borda: none, dashed, dotted, double, groove, ridge, inset, outset*/
+    margin: 30px;                          /*espaço externo*/
+    background-color: lightpink;      /*fundo*/
+}

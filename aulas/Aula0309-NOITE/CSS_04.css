@@ -1,0 +1,31 @@
+/*Fundo da Página*/
+
+body {
+    background-color: lightgray;
+}
+
+/*Título com cor azul*/
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+/*Parágrafos normais (preto)*/
+p{
+    color: black;
+    font-size: 16px;
+}
+
+/*Classe destaque (texto vermelho)*/
+.destaque {
+    color: red;
+    font-weight: bold;
+}
+
+/*Classe fundo (fundo amarelo)*/
+
+.fundo {
+    background-color: yellow;
+    padding: 10px;
+    border: 1px solid black;
+}

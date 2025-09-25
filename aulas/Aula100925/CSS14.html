@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Flexbox</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;       /*permite quebrar para baixo quando não couber*/
+            gap: 15px;              /*espaço entre os cards*/
+            justify-content: center;    /*centraliza os cards*/
+            padding: 20px;
+        }
+
+        .card{
+            flex: 1 1 200px; /* ocupa no mínimo 200px e cresce se houver espaço*/
+            background: lightgray;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+   </div> 
+</body>
+</html>
