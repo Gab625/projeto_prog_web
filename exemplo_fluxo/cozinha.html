@@ -1,279 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cozinha - Hamburgueria Delícia</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
             padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
-        
-        header {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
         h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .refresh-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
+            color: #ff6b35;
             margin-bottom: 20px;
-            font-weight: bold;
-            width: 100%;
-            transition: background 0.3s ease;
+            text-align: center;
         }
-        
-        .refresh-btn:hover {
-            background: #2980b9;
-        }
-        
-        .pedidos-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .pedido-card {
-            background: #34495e;
+        .pedido-nota {
+            background: white;
             border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 4px solid #e74c3c;
-        }
-        
-        .pedido-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-        
-        .pedido-header {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #bdc3c7;
-        }
-        
-        .pedido-nome {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #ecf0f1;
-            margin-bottom: 5px;
-        }
-        
-        .pedido-preco {
-            color: #f39c12;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .pedido-status {
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-        
-        .status-pendente { background: #e74c3c; color: white; }
-        .status-preparando { background: #f39c12; color: white; }
-        .status-pronto { background: #27ae60; color: white; }
-        
-        .botoes-acao {
-            display: flex;
-            gap: 10px;
             flex-wrap: wrap;
         }
-        
-        .btn-acao {
-            padding: 8px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .pedido-info {
+            max-width: 70%;
+        }
+        .pedido-info p {
+            margin: 5px 0;
+        }
+        .status {
             font-weight: bold;
-            font-size: 0.9rem;
-            transition: background 0.3s ease, transform 0.2s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            user-select: none;
         }
-        
-        .btn-preparando { background: #f39c12; color: white; }
-        .btn-pronto { background: #27ae60; color: white; }
-        .btn-remover { background: #e74c3c; color: white; }
-        
-        .btn-acao:hover { 
-            opacity: 0.8; 
-            transform: scale(1.05);
+        .status.pendente {
+            background-color: #f39c12;
         }
-        
-        .btn-acao:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
+        .status.pronto {
+            background-color: #27ae60;
         }
-        
-        .sem-pedidos {
-            text-align: center;
-            color: #bdc3c7;
-            font-size: 1.2rem;
-            padding: 40px;
-            background: #34495e;
+        .btn-status {
+            cursor: pointer;
+            background: #ff6b35;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .btn-status:hover {
+            background: #e55a2b;
+        }
+        .btn-limpar {
+            background: #c0392b;
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            color: white;
+            font-weight: bold;
             border-radius: 10px;
-            border: 2px dashed #bdc3c7;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
-        
-        .total-pedidos {
-            text-align: center;
-            background: #34495e;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #f39c12;
+        .btn-limpar:hover {
+            background: #992d22;
         }
-        
         @media (max-width: 600px) {
-            .botoes-acao { justify-content: center; }
-            .pedido-header { flex-direction: column; gap: 5px; text-align: center; }
-            body { padding: 10px; }
+            .pedido-info {
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🍳 Cozinha - Pedidos Pendentes</h1>
-            <p>Atualização automática a cada 10 segundos</p>
-        </header>
-        
-        <button class="refresh-btn" onclick="carregarPedidos()">🔄 Atualizar Agora</button>
-        
-        <div class="total-pedidos" id="totalPedidos">Total de pedidos: 0</div>
-        
-        <div class="pedidos-container" id="containerPedidos">
-            <div class="sem-pedidos">Nenhum pedido no momento. Aguarde novos pedidos!</div>
-        </div>
-    </div>
+    <h1>Pedidos na Cozinha</h1>
+    <div id="listaPedidos"></div>
+    <button class="btn-limpar" onclick="limparPedidos()">Limpar todos os pedidos</button>
 
     <script>
-        // Carrega e exibe pedidos
+        // Função para carregar e exibir os pedidos
         function carregarPedidos() {
-            const pedidos = JSON.parse(localStorage.getItem('pedidosHamburgueria')) || [];
-            const container = document.getElementById('containerPedidos');
-            const totalElement = document.getElementById('totalPedidos');
-            
-            // Atualiza total
-            totalElement.textContent = `Total de pedidos: ${pedidos.length}`;
-            
+            const listaPedidos = document.getElementById('listaPedidos');
+            listaPedidos.innerHTML = '';
+
+            let pedidos = JSON.parse(localStorage.getItem('pedidosHamburgueria')) || [];
+
             if (pedidos.length === 0) {
-                container.innerHTML = '<div class="sem-pedidos">Nenhum pedido no momento. Aguarde novos pedidos!</div>';
+                listaPedidos.innerHTML = '<p>Nenhum pedido no momento.</p>';
                 return;
             }
-            
-            container.innerHTML = '';
-            
+
             pedidos.forEach(pedido => {
-                const card = document.createElement('div');
-                card.className = 'pedido-card';
-                
-                // Determina os botões baseados no status
-                let botoes = '';
-                if (pedido.status === 'pendente') {
-                    botoes = `
-                        <button class="btn-acao btn-preparando" onclick="mudarStatus(${pedido.id}, 'preparando')">
-                            🍳 Iniciar Preparo
-                        </button>
-                    `;
-                } else if (pedido.status === 'preparando') {
-                    botoes = `
-                        <button class="btn-acao btn-pronto" onclick="mudarStatus(${pedido.id}, 'pronto')">
-                            ✅ Marcar como Pronto
-                        </button>
-                    `;
-                }
-                // Sempre mostra o botão de remover
-                botoes += `
-                    <button class="btn-acao btn-remover" onclick="removerPedido(${pedido.id})">
-                        ❌ Remover Pedido
-                    </button>
-                `;
-                
-                card.innerHTML = `
-                    <div class="pedido-header">
-                        <span>ID: #${pedido.id}</span>
-                        <span>${pedido.timestamp}</span>
+                const div = document.createElement('div');
+                div.classList.add('pedido-nota');
+
+                div.innerHTML = `
+                    <div class="pedido-info">
+                        <p><strong>Pedido:</strong> ${pedido.nome}</p>
+                        <p><strong>Preço:</strong> ${pedido.preco}</p>
+                        <p><strong>Hora:</strong> ${pedido.timestamp}</p>
                     </div>
-                    <div class="pedido-nome">${pedido.nome}</div>
-                    <div class="pedido-preco">${pedido.preco}</div>
-                    <div class="pedido-status status-${pedido.status}">${pedido.status.toUpperCase()}</div>
-                    <div class="botoes-acao">${botoes}</div>
+                    <div>
+                        <span class="status ${pedido.status}">${pedido.status.charAt(0).toUpperCase() + pedido.status.slice(1)}</span>
+                        <button class="btn-status" onclick="alterarStatus(${pedido.id})">
+                            ${pedido.status === 'pendente' ? 'Marcar como Pronto' : 'Marcar como Pendente'}
+                        </button>
+                    </div>
                 `;
-                
-                container.appendChild(card);
+
+                listaPedidos.appendChild(div);
             });
         }
-        
-        // Muda o status de um pedido
-        function mudarStatus(id, novoStatus) {
+
+        // Função para alterar o status do pedido
+        function alterarStatus(id) {
             let pedidos = JSON.parse(localStorage.getItem('pedidosHamburgueria')) || [];
-            pedidos = pedidos.map(p => {
-                if (p.id === id) {
-                    return { ...p, status: novoStatus };
+            pedidos = pedidos.map(pedido => {
+                if (pedido.id === id) {
+                    pedido.status = pedido.status === 'pendente' ? 'pronto' : 'pendente';
                 }
-                return p;
+                return pedido;
             });
-            
             localStorage.setItem('pedidosHamburgueria', JSON.stringify(pedidos));
-            carregarPedidos();  // Atualiza a visualização imediatamente
+            carregarPedidos();
         }
-        
-        // Remove um pedido
-        function removerPedido(id) {
-            if (confirm('Tem certeza que deseja remover este pedido?')) {
-                let pedidos = JSON.parse(localStorage.getItem('pedidosHamburgueria')) || [];
-                pedidos = pedidos.filter(p => p.id !== id);
-                
-                localStorage.setItem('pedidosHamburgueria', JSON.stringify(pedidos));
-                carregarPedidos();  // Atualiza a visualização
+
+        // Função para limpar todos os pedidos
+        function limparPedidos() {
+            if (confirm('Tem certeza que deseja limpar todos os pedidos?')) {
+                localStorage.removeItem('pedidosHamburgueria');
+                carregarPedidos();
             }
         }
-        
-        // Inicializa ao carregar a página e configura auto-atualização
-        document.addEventListener('DOMContentLoaded', function() {
-            carregarPedidos();
-            // Atualiza automaticamente a cada 10 segundos
-            setInterval(carregarPedidos, 10000);
-        });
+
+        // Inicializa a lista ao carregar a página
+        document.addEventListener('DOMContentLoaded', carregarPedidos);
     </script>
 </body>
 </html>
