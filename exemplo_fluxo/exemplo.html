@@ -16,36 +16,36 @@
         <div class="menu">
             <div class="card">
                 <img src="imgs/hamb-1.png" 
-                    alt="CB" 
+                    alt="Clássico CheeseBurger" 
                     class="food-image">
                 <p class="food-title">Clássico CheeseBurger</p>
                 <div class="food-content">
                     <h3 class="food-desc">Clássico cheeseburger com queijo derretido, alface, tomate e molho especial</h3>
-                    <p class="food-price" type="number">R$ 24,90</p>
-                    <button class="add-button" data-item="Clássico cheeseburger" data-price="24.90">Adicionar ao Pedido</button>
+                    <p class="food-price" data-price="24.90">R$ 24,90</p>
+                    <button class="add-button" data-item="Clássico CheeseBurger" data-price="24.90">Adicionar ao Pedido</button>
                 </div>
             </div>
 
             <div class="card">
                 <img src="imgs/hamb-2.png" 
-                    alt="BBQB" 
+                    alt="Duplo Monstro" 
                     class="food-image">
                 <p class="food-title">Duplo Monstro</p>
                 <div class="food-content">
                     <h3 class="food-desc">Duas carnes suculentas, queijo derretido e bacon assado</h3>
-                    <p class="food-price" type="number">R$ 29,90</p>
+                    <p class="food-price" data-price="29.90">R$ 29,90</p>
                     <button class="add-button" data-item="Duplo Monstro" data-price="29.90">Adicionar ao Pedido</button>
                 </div>
             </div>
 
             <div class="card">
                 <img src="imgs/hamb-3.png" 
-                    alt="DPB" 
+                    alt="Triplo Queijo" 
                     class="food-image">
                 <p class="food-title">Triplo Queijo</p>
                 <div class="food-content">
                     <h3 class="food-desc">Duas carnes suculentas, queijo derretido e creme de queijo</h3>
-                    <p class="food-price" type="number">R$ 34,90</p>
+                    <p class="food-price" data-price="34.90">R$ 34,90</p>
                     <button class="add-button" data-item="Triplo Queijo" data-price="34.90">Adicionar ao Pedido</button>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <p class="food-title">Coca-Cola Lata 350ml</p>
                 <div class="food-content">
                     <h3 class="food-desc">O sabor americano</h3>
-                    <p class="food-price" type="number">R$ 8,90</p>
+                    <p class="food-price" data-price="8.90">R$ 8,90</p>
                     <button class="add-button" data-item="Coca-Cola Lata 350ml" data-price="8.90">Adicionar ao Pedido</button>
                 </div>
             </div>
@@ -69,13 +69,14 @@
                 <p class="food-title">Guaraná Lata 350ml</p>
                 <div class="food-content">
                     <h3 class="food-desc">O sabor original da Amazônia</h3>
-                    <p class="food-price" type="number">R$ 8,90</p>
+                    <p class="food-price" data-price="8.90">R$ 8,90</p>
                     <button class="add-button" data-item="Guaraná Lata 350ml" data-price="8.90">Adicionar ao Pedido</button>
                 </div>
             </div>
         </div>
 
-        <div id="cart" class="cart">
+        <!-- Seção do Carrinho -->
+        <div id="cart-section" class="cart-section" style="display: none;">
             <h2>Seu Pedido</h2>
             <div id="cart-items"></div>
             <div class="cart-total">
@@ -84,10 +85,11 @@
             </div>
         </div>
 
-        <div id="receipt" class="receipt">
+        <!-- Nota Fiscal (oculta, só aparece na impressão) -->
+        <div id="receipt" class="receipt" style="display: none;">
             <div class="receipt-header">
                 <h2>🍔 Good Burguer - Nota Fiscal</h2>
-                <p>Número do Pedido: <span id="order-index"></span></p>
+                <p>Índice do Pedido: <span id="order-index"></span></p>
                 <p>Data/Hora: <span id="order-date"></span></p>
             </div>
             <div id="receipt-items" class="receipt-items"></div>

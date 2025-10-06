@@ -1,0 +1,10 @@
+.btn { padding: 10px 14px; border-radius: 8px; cursor: pointer; background: #0b3d91; color: #fff;
+    transition: transform .15s, background .2s;
+}
+
+.btn:hover { transform: translateY(-1px); background: #1552bf;}
+
+#lista { list-style: none; padding: 0; margin-top: 12px;}
+#lista li {padding: 8px 10px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 8px; background: #fff;}
+.novo { animation: pop .18s ease-out;}
+@keyframes pop { from{ transform: scale(.96); opacity: 4} to {transform: scale(1); opacity: 1}}
