@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const orderDateSpan = document.querySelector('#order-date');
     const receiptTotalSpan = document.querySelector('#receipt-total');
 
+
+    // Função para retornar o idx seja o salvo no local storage ou 0
     function nextOrderIndex() {
         let index = localStorage.getItem('orderIndex') || 0;
         index = parseInt(index) + 1;
@@ -18,10 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return index;
     }
 
+    // Função para formatar o valor em reais, usando API
     function formatPrice(price) {
         return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price);
     }
 
+    // Função para adicionar ao carro, passando o item e o preço
+    // .find vai procurar no array, se há um item igual para realizar o incremendo na quantidade se nao adicionar um novo item
     function addToCart(itemName, price) {
         const existingItem = cart.find(cartItem => cartItem.item === itemName);
         if (existingItem) {
@@ -29,17 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             cart.push({ item: itemName, price: parseFloat(price), quantity: 1 });
         }
-        updateCartDisplay();
+        updateCart();
     }
 
-    function updateCartDisplay() {
+    // Formatação do .inner para alterar o texto no html
+    function updateCart() {
         cartItemsDiv.innerHTML = '';
         let total = 0;
 
+        // Para cada item será passado o preço e a quantidade para ser multiplicado e calculado o valor total
         cart.forEach((cartItem, index) => {
             const subtotal = cartItem.price * cartItem.quantity;
             total += subtotal;
-
+            
+            // Alteração no html com a criação da div cartItem, e adicionando a classe cart-item e populando com o item, qtde e subtotal
+            // Além d adiocionar um botao de remover que irá remover o item por índice
             const cartItemDiv = document.createElement('div');
             cartItemDiv.classList.add('cart-item');
             cartItemDiv.innerHTML = `
@@ -59,9 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Remover uma porção do array com splice
     window.removeFromCart = function(index) {
         cart.splice(index, 1);
-        updateCartDisplay();
+        updateCart();
     };
 
     // Finalizar pedido e imprimir nota
@@ -87,14 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span>${cartItem.item} (x${cartItem.quantity})</span>
                 <span>${formatPrice(subtotal)}</span>
             `;
-            receiptItemsDiv.appendChild(receiptItemDiv);
+            receiptItemsDiv.append(receiptItemDiv);
         });
 
         receiptTotalSpan.textContent = formatPrice(total);
 
         // Limpar carrinho após finalização
         cart.length = 0;
-        updateCartDisplay();
+        updateCart();
 
         // Mostrar e imprimir a nota
         receipt.style.display = 'block';
