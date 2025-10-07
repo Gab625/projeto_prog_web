@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
         cartTotalSpan.textContent = formatPrice(total);
 
         if (cart.length > 0) {
-            cartSection.style.display = 'block';
+            cartSection.style.display = 'block'; // mostra enquanto está no loop
             finalizeButton.style.display = 'block';
-        } else {
-            cartSection.style.display = 'none';
+        } else { 
+            cartSection.style.display = 'none'; // esconde após o cart ser = 0
         }
     }
 
@@ -87,10 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         orderDateSpan.textContent = now;
         receiptItemsDiv.innerHTML = '';
 
+        // Para cada item no array cart realiza o codigo
         cart.forEach(cartItem => {
             const subtotal = cartItem.price * cartItem.quantity;
             total += subtotal;
 
+            // Criação da div, classe CSS e colocar texto no HTML
             const receiptItemDiv = document.createElement('div');
             receiptItemDiv.classList.add('receipt-item');
             receiptItemDiv.innerHTML = `
